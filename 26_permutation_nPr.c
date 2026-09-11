@@ -1,0 +1,31 @@
+/* Question: Ek program likhein jo permutation (nPr) calculate kare. */
+
+#include <stdio.h>
+
+int main(void)
+{
+    int n, r, x = 1, y, z = 1;
+    printf("Enter total number of item : ");
+    scanf("%d", &n);
+    printf("Enter number of item taken at a time : ");
+    scanf("%d", &r);
+    
+    // n ka factorial (n!) calculate karein
+    for (int i = n; i >= 1; i--)
+    {
+        x = x * i;
+    }
+    
+    y = n - r;
+    
+    // (n-r) ka factorial ((n-r)!) calculate karein
+    for (int i = y; i >= 1; i--)
+    {
+       z = z * i;
+    }
+    
+    // Output nPr = n! / (n-r)!
+    printf("Permutation of %d and %d is %d", n, r, x / z);
+    
+    return 0;
+}
